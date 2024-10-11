@@ -21,14 +21,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Widget Tree for a Simple UI'),
         shadowColor: Colors.amber,
-        ElevatedButton.icon(
-          onPressed: () {
-            // Add your action here
-            print('Button pressed!');
-          },
-          icon: Icon(Icons.thumb_up),
-          label: Text('Like')
-        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 60),
+            child: ElevatedButton.icon(
+              onPressed: () {
+                // Add your action here
+                print('Button pressed in AppBar!');
+              },
+              icon: const Icon(Icons.thumb_up),
+              label: const Text('Like'),
+              style: ElevatedButton.styleFrom(
+                iconColor: Colors.amber, // Change color of the button if needed
+                backgroundColor: Colors.cyan
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
